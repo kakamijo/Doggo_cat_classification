@@ -1,9 +1,13 @@
+# from https://www.kaggle.com/uysimty/keras-cnn-dog-or-cat-classification
+# RGB images classification
+
 import numpy as np
 from keras.preprocessing.image import load_img
 import matplotlib.pyplot as plt
 from model import history, epochs
 from preprocess import test_df, IMAGE_SIZE
 
+# visualize training
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 12))
 ax1.plot(history.history['loss'], color='b', label="Training loss")
 ax1.plot(history.history['val_loss'], color='r', label="validation loss")
@@ -18,6 +22,7 @@ legend = plt.legend(loc='best', shadow=True)
 plt.tight_layout()
 plt.show()
 
+# see predicted result with images
 sample_test = test_df.head(18)
 sample_test.head()
 plt.figure(figsize=(12, 24))
@@ -31,8 +36,11 @@ for index, row in sample_test.iterrows():
 plt.tight_layout()
 plt.show()
 
+'''
+# submission(for Kaggle competition)
 submission_df = test_df.copy()
 submission_df['id'] = submission_df['filename'].str.split('.').str[0]
 submission_df['label'] = submission_df['category']
 submission_df.drop(['filename', 'category'], axis=1, inplace=True)
 submission_df.to_csv('submission.csv', index=False)
+'''

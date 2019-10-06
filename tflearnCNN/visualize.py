@@ -1,3 +1,6 @@
+# from https://www.kaggle.com/sentdex/full-classification-example-with-convnet
+# gray scale classification
+
 import numpy as np
 import matplotlib.pyplot as plt
 from cnn2 import model
@@ -32,16 +35,3 @@ for num, data in enumerate(test_data[:12]):
     y.axes.get_yaxis().set_visible(False)
 
 plt.show()
-
-with open('submission-file.csv', 'w') as f:
-    f.write('id,label\n')
-
-with open('submission-file.csv', 'w') as f:
-    for data in tqdm(test_data):
-        img_num = data[1]
-        img_data = data[0]
-        y = fig.add_subplot(3, 4, num + 1)
-        orig = img_data
-        data = img_data.reshape(IMG_SIZE, IMG_SIZE, 1)
-        model_out = model.predict([data])[0]
-        f.write('{},{}\n'.format(img_num, model_out[1]))

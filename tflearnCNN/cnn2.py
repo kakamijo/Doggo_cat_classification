@@ -1,3 +1,6 @@
+# from https://www.kaggle.com/sentdex/full-classification-example-with-convnet
+# gray scale classification
+
 import tflearn
 from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.core import input_data, dropout, fully_connected
