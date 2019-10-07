@@ -13,7 +13,7 @@ input_shape = Input(shape=(IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_CHANNELS))
 # ResNet(include_top, weights, input_tensor, input_shape)
 pre_trained_model = ResNet50(include_top=False, weights='imagenet', input_tensor=input_shape)
 
-# search layer 'block5_pool"
+# search layer 'activation_49"
 last_layer = pre_trained_model.get_layer('activation_49')
 # get list of output tensor
 last_output = last_layer.output
