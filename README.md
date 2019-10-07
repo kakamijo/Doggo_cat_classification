@@ -3,4 +3,5 @@ classification of dogs or cats,I use dogs-vs-cats dataset from  https://www.kagg
 
 tflearnCNN : code for gray scale classification using tflearn  
 Keras CNN  : code for RGB classification using Keras  
-VGG16      : code using VGG16 as network
+VGG16      : code using VGG16 as network  
+ResNet     : code using ResNet50 as network
