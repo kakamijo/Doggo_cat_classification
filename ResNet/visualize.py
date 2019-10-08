@@ -33,7 +33,6 @@ for index, row in sample_test.iterrows():
     plt.xlabel(filename + '(' + "{}".format(category) + ')')
 plt.tight_layout()
 plt.show()
-plt.savefig('cnn')
 
 '''
 # submission(for Kaggle competition)
